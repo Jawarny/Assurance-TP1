@@ -32,7 +32,14 @@ public class CV {
 	
 	
 	
-	public static void affiche() {
+	public void affiche() {
 		
+		System.out.println( this.nom );
+		System.out.println( this.prenom );
+		System.out.println( this.formation );
+		System.out.println( this.nbAnneeTravail );
+		//System.out.println( afficherCompetences(this.competences) );
+		System.out.println( this.attentes );
+		System.out.println( "\n" );
 	}
 }

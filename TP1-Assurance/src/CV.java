@@ -24,16 +24,14 @@ public class CV {
 		this.attentes = attentes;
 	}
 	
-	
-	
 	public void affiche() {
 		
-		System.out.println( this.nom );
-		System.out.println( this.prenom );
-		System.out.println( this.formation );
-		System.out.println( this.nbAnneeTravail );
-		System.out.println( afficherCompetences(this.competences) );
-		System.out.println( this.attentes );
+		System.out.println( "Nom : \t\t\t\t" + this.nom );
+		System.out.println( "Prénom : \t\t\t" + this.prenom );
+		System.out.println( "Formation : \t\t\t" + this.formation );
+		System.out.println( "Expériance de travail : \t" + this.nbAnneeTravail );
+		System.out.println( "Compétences : \t\t\t" + afficherCompetences(this.competences) );
+		System.out.println( "Attentes : \t\t\t" + this.attentes );
 		System.out.println( "\n" );
 	}
 	

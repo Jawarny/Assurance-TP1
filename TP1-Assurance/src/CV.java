@@ -10,8 +10,27 @@ public class CV {
 
 	public static void main( String[] args ) {
 		// TODO Auto-generated method stub
-		System.out.println( "Bienvenue chez Barette!" );
+		System.out.println( "Bienvenue chez Barette!\n" );
+		
 	}
+	
+	public CV() {
+		this( "", "", "", 0, new String[]{""}, "");
+	}
+	
+	public CV(	String nom, String prenom, 
+				String formation, int nbAnneeTravail, 
+				String[] competences, String attentes) {
+		
+		this.nom = nom;
+		this.prenom = prenom;
+		this.formation = formation;
+		this.nbAnneeTravail = nbAnneeTravail;
+		this.competences = competences;
+		this.attentes = attentes;
+	}
+	
+	
 	
 	public static void affiche() {
 		

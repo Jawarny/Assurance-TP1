@@ -7,12 +7,6 @@ public class CV {
 	private int nbAnneeTravail;
 	private String[] competences;
 	private String attentes;
-
-	public static void main( String[] args ) {
-		// TODO Auto-generated method stub
-		System.out.println( "Bienvenue chez Barette!\n" );
-		
-	}
 	
 	public CV() {
 		this( "", "", "", 0, new String[]{""}, "");
@@ -38,8 +32,24 @@ public class CV {
 		System.out.println( this.prenom );
 		System.out.println( this.formation );
 		System.out.println( this.nbAnneeTravail );
-		//System.out.println( afficherCompetences(this.competences) );
+		System.out.println( afficherCompetences(this.competences) );
 		System.out.println( this.attentes );
 		System.out.println( "\n" );
+	}
+	
+	public static String afficherCompetences( String[] competences ) {
+		String chaineCompetances = "";
+		
+		for ( int i = 0; i < competences.length; i++ ) {
+			
+			if ( i == competences.length - 1 ) {
+				
+				chaineCompetances += competences[i];
+			} else {
+				
+				chaineCompetances += competences[i] + ",";
+			}
+		}
+		return chaineCompetances;
 	}
 }

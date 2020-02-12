@@ -40,8 +40,10 @@ public class Principal {
 		
 		
 		Restaurent restaurent01 = new Restaurent( fichier );
-		
 		restaurent01.afficherFacture();
+		
+		OutilsFichier.sauvegarderFichier( "src\\ressources\\factureRestaurent01.txt", "Factures:\n" +
+										OutilsTableau.toStringEnter(restaurent01.getFacture()) );
 	}
 	
 	

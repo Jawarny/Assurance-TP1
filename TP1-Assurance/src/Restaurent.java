@@ -123,6 +123,11 @@ public class Restaurent {
 		afficherCommande();
 	}	
 	
+	public void afficherFichier() {
+		System.out.println( "Le fichier style.txt :");
+		System.out.println(OutilsTableau.toStringEnter(getFichier()) +"\n");
+	}
+	
 	public void afficherClients() {
 		System.out.println( OutilsConstante.LISTE_CLIENT );
 		System.out.println(OutilsTableau.toStringEnter(getClient()) +"\n");

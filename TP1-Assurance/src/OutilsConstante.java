@@ -1,4 +1,5 @@
 
+
 public class OutilsConstante {
 	public static final String CHEMIN_FACTURE = "src\\ressources\\style.txt";
 	public static final String LISTE_CLIENT = "Clients : ";

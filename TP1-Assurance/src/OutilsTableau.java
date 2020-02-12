@@ -1,4 +1,4 @@
-package ressources;
+
 
 public class OutilsTableau {
 	

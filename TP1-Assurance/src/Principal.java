@@ -1,6 +1,9 @@
 
+
+
 import java.io.FileNotFoundException;
 import java.io.IOException;
+
 
 public class Principal {
 	
@@ -41,7 +44,7 @@ public class Principal {
 		
 		Restaurent restaurent01 = new Restaurent( fichier );
 		
-		restaurent01.afficher();
+		restaurent01.afficherFacture();
 	}
 	
 	

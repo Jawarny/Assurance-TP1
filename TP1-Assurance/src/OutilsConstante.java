@@ -1,4 +1,8 @@
-
+/**
+ * Auteurs : Elias Jawhari et Khalil Joseph
+ * Fichier : OutilsConstante.java
+ * Date    : 16 février 2020
+ */
 
 
 public class OutilsConstante {

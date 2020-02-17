@@ -4,6 +4,7 @@ Céline
 Steeve
 Jeff
 Daniel
+Yasser
 Plats : 
 Poutine 10.5 
 Frites 2.5 
@@ -20,4 +21,6 @@ Jeff Frites 10
 Jeff Repas_Poulet 10
 Jeff Spaguette 10
 Jeff aile_de_poulet_16 10
+Yasser aile_de_poulet_16 1
+Yasser Spaguette 1
 Fin

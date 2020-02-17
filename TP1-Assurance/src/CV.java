@@ -1,4 +1,8 @@
-
+/**
+ * Auteurs : Elias Jawhari et Khalil Joseph
+ * Fichier : CV.java
+ * Date    : 16 février 2020
+ */
 
 import java.util.Scanner;
 

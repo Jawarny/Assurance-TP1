@@ -1,3 +1,9 @@
+/**
+ * Auteurs : Elias Jawhari et Khalil Joseph
+ * Fichier : Restaurent.java
+ * Date    : 16 février 2020
+ */
+
 import java.io.IOException;
 
 public class Restaurent {

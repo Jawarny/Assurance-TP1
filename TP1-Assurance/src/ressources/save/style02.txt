@@ -1,7 +1,8 @@
 Bienvenue chez Barette!
 Facture :
-Roger 10.50$
-Céline 20.75$
-Steeve 0.00$
-Jeff 577.50$
-Daniel 18.00$
+Roger 10,50$
+Céline 20,75$
+Steeve 0,00$
+Jeff 577,50$
+Daniel 18,00$
+Yasser 29,00$

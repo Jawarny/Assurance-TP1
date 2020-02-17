@@ -1,3 +1,9 @@
+/**
+ * Auteurs : Elias Jawhari et Khalil Joseph
+ * Fichier : Principal.java
+ * Date    : 16 février 2020
+ */
+
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
@@ -9,14 +15,14 @@ public class Principal {
 		// TODO Auto-generated method stub
 		
 		//System.out.println( OutilsConstante.MESSAGE_BIENVENU );
-		String fichier = OutilsFichier.lireFichier( OutilsConstante.CHEMIN_FACTURE );
+		String fichier = OutilsFichier.lireFichier( OutilsConstante.CHEMIN_FACTURE02 );
 		
 		if ( !OutilsFichier.fichierRestaurent( fichier ) ) {
 			System.out.println( OutilsConstante.ERREUR_FICHIER );
-			OutilsFichier.sauvegarderFichier( OutilsConstante.CHEMIN_SFACTURE, OutilsConstante.ERREUR_FICHIER );
+			OutilsFichier.sauvegarderFichier( OutilsConstante.CHEMIN_SFACTURE02, OutilsConstante.ERREUR_FICHIER );
 		} else {
 			Restaurent res01 = new Restaurent ( fichier );
-			res01.afficherFacture( OutilsConstante.CHEMIN_SFACTURE );
+			res01.afficherFacture( OutilsConstante.CHEMIN_SFACTURE02 );
 		}
 		
 		String[] competencesElias = { "C#", "Java", "Lua" };

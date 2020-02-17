@@ -1,7 +1,7 @@
 Clients : 
 Roger 
 Céline 
-Steeve 
+Steeve
 Plats : 
 Poutine 10.5 
 Frites 2.5 
@@ -11,4 +11,3 @@ Roger Poutine 1
 Céline Frites 2 
 Céline Repas_Poulet 1 
 Fin
-

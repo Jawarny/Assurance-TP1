@@ -1,0 +1,7 @@
+Bienvenue chez Barette!
+Facture :
+Roger 10.50$
+Céline 20.75$
+Daniel  0.00$
+Steeve 0.00$
+Jeff 577.50$

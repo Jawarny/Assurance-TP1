@@ -15,7 +15,7 @@ public class Principal {
 		// TODO Auto-generated method stub
 		
 		//System.out.println( OutilsConstante.MESSAGE_BIENVENU );
-		String fichier = OutilsFichier.lireFichier( OutilsConstante.CHEMIN_FACTURE );
+		String fichier = OutilsFichier.lireFichier( OutilsConstante.CHEMIN_FACTURE03 );
 		
 		if ( !OutilsFichier.formatFichier( fichier ) ) {
 			System.out.println( OutilsConstante.ERREUR_FICHIER );
@@ -27,7 +27,10 @@ public class Principal {
 				OutilsFichier.sauvegarderFichier( OutilsConstante.CHEMIN_ERREUR, OutilsConstante.ERREUR_SECTION );
 			} else {
 				Restaurant res01 = new Restaurant ( fichier );
-				res01.afficherFacture( OutilsConstante.CHEMIN_SFACTURE );
+				//res01.afficherDetailler();
+				
+				res01.afficherFacture( OutilsConstante.CHEMIN_SFACTURE03 );
+				
 				res01.sauvegarderFichierDetailler( OutilsConstante.SAUVEGARDE );
 			}
 			

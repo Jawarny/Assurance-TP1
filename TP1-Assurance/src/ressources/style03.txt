@@ -1,13 +1,35 @@
-Clients :
+Clients      :
+Aya   
+Hamza
+Laala
+Zakaria
+Bahaa
+Yousra
 Roger
 Céline
 Steeve
+Saad
+Yassine
 Plats :
+Mojito_citronnade     7
+Shisha_gomme_menthe 20.00
+Shisha_citron_menthe 20
+Coca_cola_cannette 3.25
+Eau 3
+Shisha_pêche 20.10
 Poutine 10.5
+Marka 23
+Msemen 3.50
 Frites 2.5
 Repas_Poulet 15.75
+Biere_1 214.99
 Commandes :
-Roger Poutine 1
-Céline Frites 2
-Céline Repas_Poulet 1
+Roger  Poutine   1  
+Yassine Biere_1 1
+Céline  Frites 2
+Céline    Repas_Poulet 1
+     Saad Marka 1
+Aya Mojito_citronnade 10
+Aya Coca_cola_cannette 20
+Aya Eau 6
 Fin

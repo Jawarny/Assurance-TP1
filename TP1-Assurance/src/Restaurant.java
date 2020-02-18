@@ -17,7 +17,7 @@ public class Restaurant {
 		
 	}
 	
-	public Restaurant(	String fichier ) {
+	public Restaurant(	String fichier ) throws IOException {
 		
 		setFichier( fichier );
 		trouverClients( fichier );
@@ -79,8 +79,8 @@ public class Restaurant {
 		}
 	}
 	
-	private void trouverCommandes(String fichier ) {
-		
+	private void trouverCommandes(String fichier ) throws IOException {
+		String listeErreurs = "";
 		String[]clientErreur = {};
 		String[]platErreur = {};
 		
@@ -115,6 +115,7 @@ public class Restaurant {
 				if ( !OutilsTableau.valExiste( clientErreur, uneCommande[0] ) ) {
 					clientErreur = OutilsTableau.fusionnerTableau( clientErreur, uneCommande[0] );
 					System.out.println( "Erreur! " + uneCommande[0] + " n'est pas dans la liste des clients!" );
+					listeErreurs += "Erreur! " + uneCommande[0] + " n'est pas dans la liste des clients!\n";
 				}
 			}
 			
@@ -127,6 +128,7 @@ public class Restaurant {
 				if ( !OutilsTableau.valExiste( platErreur, uneCommande[0] ) ) {
 					platErreur = OutilsTableau.fusionnerTableau( platErreur, uneCommande[0] );
 					System.out.println( "Erreur! " + uneCommande[1] + " n'est pas dans la liste des plats!" );
+					listeErreurs += "Erreur! " + uneCommande[1] + " n'est pas dans la liste des plats!";
 				}
 				
 			}
@@ -136,6 +138,10 @@ public class Restaurant {
 			
 			this.commandes = OutilsTableau.fusionnerTableau( this.commandes, 
 					new Commande(clientTemp, platTemp, quantite) );
+			
+			if ( listeErreurs != "" ) {
+				OutilsFichier.sauvegarderFichier( OutilsConstante.CHEMIN_ERREUR, listeErreurs );
+			}
 		}
 	}
 	

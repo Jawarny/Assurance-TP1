@@ -1,0 +1,23 @@
+Bienvenue chez Barette!
+Clients :
+Roger
+Céline
+Steeve
+
+Plats :
+Poutine 10.50$
+Frites 2.50$
+Repas_Poulet 15.75$
+Repas_Poisson 15.00$
+Repas_Steak 19.00$
+
+Commandes :
+Roger Poutine 1
+  21
+ Frites 21
+Céline Repas_Poulet 1
+
+Facture :
+Roger 10.50$
+Céline 15.75$
+Steeve 0.00$

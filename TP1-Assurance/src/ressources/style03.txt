@@ -1,22 +1,13 @@
-Clients : 
-Roger 
-Céline 
+Clients :
+Roger
+Céline
 Steeve
-Jeff
-Daniel
-Poutine 10.5 
-Frites 2.5 
-Repas_Poulet 15.75 
-Spaguette 20.00
-aile_de_poulet_16 9.00
-Commandes : 
-Roger Poutine 1 
-Céline Frites 2 
-Céline Repas_Poulet 1 
-Daniel aile_de_poulet_16 2
-Jeff Poutine 10
-Jeff Frites 10
-Jeff Repas_Poulet 10
-Jeff Spaguette 10
-Jeff aile_de_poulet_16 10
+Plats :
+Poutine 10.5
+Frites 2.5
+Repas_Poulet 15.75
+Commandes :
+Roger Poutine 1
+Céline Frites 2
+Céline Repas_Poulet 1
 Fin

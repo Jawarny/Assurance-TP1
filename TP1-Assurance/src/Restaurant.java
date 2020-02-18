@@ -6,18 +6,18 @@
 
 import java.io.IOException;
 
-public class Restaurent {
+public class Restaurant {
 
 	private String fichier;
 	private Client[] clients = {};
 	private Plat[] plats = {};
 	private Commande[] commandes = {};
 	
-	public Restaurent(){
+	public Restaurant(){
 		
 	}
 	
-	public Restaurent(	String fichier ) {
+	public Restaurant(	String fichier ) {
 		
 		setFichier( fichier );
 		trouverClients( fichier );
@@ -46,10 +46,6 @@ public class Restaurent {
 	public Commande[] getCommandes() {
 		return this.commandes;
 	}
-	
-//	public String[] getFacture() {
-//		return this.facture;
-//	}
 	
 	public void trouverClients( String fichier ) {
 		String[]fichierTab = fichier.split( "\n" );
@@ -85,6 +81,9 @@ public class Restaurent {
 	
 	private void trouverCommandes(String fichier ) {
 		
+		String[]clientErreur = {};
+		String[]platErreur = {};
+		
 		String[]fichierTab = fichier.split( "\n" );
 		
 		int indA = OutilsTableau.indiceVal( fichierTab, OutilsConstante.LISTE_COMMANDE );
@@ -112,11 +111,24 @@ public class Restaurent {
 					clientTemp = getClient()[j];
 				}
 			}
+			if ( clientTemp.getNom().contentEquals( "" ) ) {
+				if ( !OutilsTableau.valExiste( clientErreur, uneCommande[0] ) ) {
+					clientErreur = OutilsTableau.fusionnerTableau( clientErreur, uneCommande[0] );
+					System.out.println( "Erreur! " + uneCommande[0] + " n'est pas dans la liste des clients!" );
+				}
+			}
 			
 			for ( int j = 0; j < getPlat().length && platTemp.getNom().contentEquals( "" ) ; j++ ) {
 				if ( getPlat()[j].getNom().contentEquals( uneCommande[1] ) ) {
 					platTemp = getPlat()[j];
 				}
+			}
+			if ( platTemp.getNom().contentEquals( "" ) ) {
+				if ( !OutilsTableau.valExiste( platErreur, uneCommande[0] ) ) {
+					platErreur = OutilsTableau.fusionnerTableau( platErreur, uneCommande[0] );
+					System.out.println( "Erreur! " + uneCommande[1] + " n'est pas dans la liste des plats!" );
+				}
+				
 			}
 			
 			quantite = Integer.parseInt( uneCommande[2] );
@@ -243,10 +255,44 @@ public class Restaurent {
 		afficherCommandesDetailler();
 	}	
 	
-	
-//	public void afficherFacture() {
-//		System.out.println( "Factures:" );
-//		System.out.println(OutilsTableau.toStringEnter(getFacture()) + "\n");
-//	}
+	public void sauvegarderFichierDetailler( String chemin ) throws IOException {
+		String fichierDetailler = OutilsConstante.MESSAGE_BIENVENU;
+		
+		fichierDetailler += OutilsConstante.LISTE_CLIENT + "\n";
+		
+		for ( int i = 0; i < getClient().length; i++ ) {
+			fichierDetailler += getClient()[i].getNom() + "\n";
+		}
+		fichierDetailler += "\n";
+		
+		fichierDetailler += OutilsConstante.LISTE_PLAT  + "\n";
+		for ( int i = 0; i < getPlat().length; i++ ) {
+			fichierDetailler += getPlat()[i].getNom() + " " + String.format("%.2f", getPlat()[i].getPrix()) + "$\n";
+		}
+		fichierDetailler += "\n";
+		
+		fichierDetailler += OutilsConstante.LISTE_COMMANDE  + "\n";
+		
+		for ( int i = 0; i < getCommandes().length; i++ ) {
+			fichierDetailler += getCommandes()[i].getClient().getNom() +  " " 
+								+ getCommandes()[i].getPlat().getNom() +  " " 
+								+  getCommandes()[i].getQuantite() + "\n";
+		}
+		fichierDetailler += "\n";
+		
+		
+		
+		fichierDetailler += OutilsConstante.LISTE_FACTURE + "\n";
+		for ( int i = 0; i < getClient().length; i++ ) {
+			if ( i == getClient().length - 1 ) {
+				fichierDetailler += getClient()[i].getNom() + " " 
+									+ String.format("%.2f", getClient()[i].getFacture().getTotal()) + "$";
+			} else {
+				fichierDetailler += getClient()[i].getNom() + " " 
+									+ String.format("%.2f", getClient()[i].getFacture().getTotal()) + "$\n";
+			}
+		}
+		OutilsFichier.sauvegarderFichier( chemin, fichierDetailler );
+	}
 	
 }

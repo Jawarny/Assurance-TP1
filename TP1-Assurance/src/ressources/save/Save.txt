@@ -3,18 +3,24 @@ Clients :
 Roger
 Céline
 Steeve
+jawarny
+jeff
 
 Plats :
-Poutine 10.50$
-Frites 2.50$
-Repas_Poulet 15.75$
+Poutine 10,50$
+Frites 2,50$
+Repas_Poulet 15,75$
+biere_pack_12 24,07$
 
 Commandes :
+jeff biere_pack_12 2
 Roger Poutine 1
 Céline Frites 2
 Céline Repas_Poulet 1
 
 Facture :
-Roger 10.50$
-Céline 20.75$
-Steeve 0.00$
+Roger 10,50$
+Céline 20,75$
+Steeve 0,00$
+jawarny 0,00$
+jeff 48,14$

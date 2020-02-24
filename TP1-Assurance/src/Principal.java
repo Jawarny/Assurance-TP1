@@ -30,6 +30,7 @@ public class Principal {
 				//res01.afficherDetailler();
 				
 				res01.afficherFacture( OutilsConstante.CHEMIN_SFACTURE03 );
+				res01.afficherFichier();
 				
 				res01.sauvegarderFichierDetailler( OutilsConstante.SAUVEGARDE );
 			}

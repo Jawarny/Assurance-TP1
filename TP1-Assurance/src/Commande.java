@@ -24,8 +24,8 @@ public class Commande {
 		this.client = client;
 	}
 	
-	public void setPlat(Plat palt) {
-		this.plat = palt;
+	public void setPlat(Plat plat) {
+		this.plat = plat;
 	}
 	
 	public void setQuantite(int quantite) {

@@ -1,50 +1,20 @@
 Bienvenue chez Barette!
 Clients :
-Aya
-Hamza
-Laala
-Zakaria
-Bahaa
-Yousra
 Roger
 Céline
 Steeve
-Saad
-Yassine
 
 Plats :
-Mojito_citronnade 7.00$
-Shisha_gomme_menthe 20.00$
-Shisha_citron_menthe 20.00$
-Coca_cola_cannette 3.25$
-Eau 3.00$
-Shisha_pêche 20.10$
 Poutine 10.50$
-Marka 23.00$
-Msemen 3.50$
 Frites 2.50$
 Repas_Poulet 15.75$
-Biere_1 214.99$
 
 Commandes :
 Roger Poutine 1
-Yassine Biere_1 1
 Céline Frites 2
 Céline Repas_Poulet 1
-Saad Marka 1
-Aya Mojito_citronnade 10
-Aya Coca_cola_cannette 20
-Aya Eau 6
 
 Facture :
-Aya 153.00$
-Hamza 0.00$
-Laala 0.00$
-Zakaria 0.00$
-Bahaa 0.00$
-Yousra 0.00$
 Roger 10.50$
 Céline 20.75$
 Steeve 0.00$
-Saad 23.00$
-Yassine 214.99$

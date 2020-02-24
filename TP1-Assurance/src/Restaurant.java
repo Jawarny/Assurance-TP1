@@ -299,6 +299,7 @@ public class Restaurant {
 			}
 		}
 		OutilsFichier.sauvegarderFichier( chemin, fichierDetailler );
+		
 	}
 	
 }

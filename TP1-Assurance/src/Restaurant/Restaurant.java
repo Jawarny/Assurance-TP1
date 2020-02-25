@@ -1,11 +1,9 @@
-
-/**
- * Auteurs : Elias Jawhari et Khalil Joseph
- * Fichier : Restaurent.java
- * Date    : 16 février 2020
- */
+package Restaurant;
 
 import java.io.IOException;
+
+import Outils.*;
+import Restaurant.*;
 
 public class Restaurant {
 

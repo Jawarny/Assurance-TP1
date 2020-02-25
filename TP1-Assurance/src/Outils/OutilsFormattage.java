@@ -1,60 +1,47 @@
+package Outils;
 
-/**
- * Auteurs : Elias Jawhari et Khalil Joseph
- * Fichier : OutilsFichier.java
- * Date    : 16 février 2020
- */
-
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileInputStream;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.InputStreamReader;
-
-public class OutilsFichier {
-
-	public static void sauvegarderFichier(String chemin, String facture) throws IOException {
-
-		try (BufferedWriter ecrire = new BufferedWriter(new FileWriter(chemin))) {
-			ecrire.write(facture);
-			ecrire.close();
-		}
-	}
-
-	public static String lireFichier(String chemin) throws IOException {
-
-		String chaqueLigne = "";
-		try (BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(chemin), "UTF8"))) {
-			String ligne;
-
-			while ((ligne = br.readLine()) != null) {
-				if (!ligne.contentEquals("")) {
-
-					// DELEAT SPACES extra SPACES
-					while (ligne.contains("  ")) {
-						ligne = garderUnEspace(ligne);
-					}
-
-					// DELEAT SPACES at END
-					while (ligne.endsWith(" ")) {
-						ligne = ligne.substring(0, ligne.length() - 1);
-					}
-					// DELEAT SPACES at START
-					while (ligne.startsWith(" ")) {
-						ligne = ligne.substring(1, ligne.length());
-					}
-
-					if (chaqueLigne.contentEquals("")) {
-						chaqueLigne += ligne;
-					} else {
-						chaqueLigne += "\n" + ligne;
-					}
-				}
+public class OutilsFormattage {
+	
+	private static int nbLigne = 0;
+	private static boolean espaceEr = false;
+	
+	public static String formatterChaqueLigne( String ligne ) {
+		nbLigne ++;
+		int espaceAv = 0;
+		int espaceAp = 0;
+		int espaceEx = 0;
+		
+		if (!ligne.contentEquals("")) {
+			
+			// DELEAT SPACES extra SPACES
+			while (ligne.contains("  ")) {
+				ligne = garderUnEspace(ligne);
+				espaceEx++;
+				espaceEr = true;
 			}
+			
+			// DELEAT SPACES at START
+			while (ligne.startsWith(" ")) {
+				ligne = ligne.substring(1, ligne.length());
+				espaceAv++;
+				espaceEr = true;
+			}
+			
+			// DELEAT SPACES at END
+			while (ligne.endsWith(" ")) {
+				ligne = ligne.substring(0, ligne.length() - 1);
+				espaceAp++;
+				espaceEr = true;
+			}
+			
 		}
-		return chaqueLigne;
+		
+		espaceEr = false;
+		
+		
+		return ligne;
 	}
+	
 
 	public static String garderUnEspace(String ligne) {
 
@@ -62,12 +49,12 @@ public class OutilsFichier {
 
 		return ligne;
 	}
-
+	
 	public static boolean formatFichier(String fichier) {
 		return (fichier.contains(OutilsConstante.LISTE_CLIENT) && fichier.contains(OutilsConstante.LISTE_PLAT)
 				&& fichier.contains(OutilsConstante.LISTE_COMMANDE) && fichier.endsWith(OutilsConstante.LISTE_FIN));
 	}
-
+	
 	public static boolean formatSection(String fichier) {
 		boolean client = formatClient(fichier);
 		boolean plat = formatPlat(fichier);
@@ -169,4 +156,5 @@ public class OutilsFichier {
 
 		return (bonneCommande);
 	}
+
 }

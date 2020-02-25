@@ -1,9 +1,10 @@
+package Outils;
+
 /**
  * Auteurs : Elias Jawhari et Khalil Joseph
  * Fichier : OutilsConstante.java
  * Date    : 16 février 2020
  */
-
 
 public class OutilsConstante {
 	
@@ -11,6 +12,7 @@ public class OutilsConstante {
 	
 	public static final String MESSAGE_BIENVENU = "Bienvenue chez Barette!\n";
 	
+	public static final String ERREUR_CORRIGER = "ERREUR CORRIGER :";
 	public static final String ERREUR_FICHIER = "Le fichier ne respecte pas le format demandé !";
 	public static final String ERREUR_SECTION = "Une ou plusieurs des sections ne respecte pas le format demandé !";
 	

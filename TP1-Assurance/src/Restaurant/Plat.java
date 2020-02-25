@@ -1,8 +1,5 @@
-/**
- * Auteurs : Elias Jawhari et Khalil Joseph
- * Fichier : Plat.java
- * Date    : 16 février 2020
- */
+package Restaurant;
+
 
 
 public class Plat {

@@ -1,17 +1,18 @@
-Plats     : 
-          Poutine 10.5
-Frites     2.5
-Repas_Poulet 15.75
-biere_pack_12 24.07
-Clients      :
-Roger    
-Céline                                
-    Steeve  
-jawarny
-jeff
-Commandes :
-jeff biere_pack_12 2
-       Roger Poutine 1
-Céline           Frites 2
-Céline Repas_Poulet 1
-            Fin
+Clients    :
+  
+Roger  
+  Céline
+  
+  
+    
+Steeve
+ Plats  : 
+ Poutine 10.5
+  Frites   2.5  
+Repas_Poulet   15.75
+
+Commandes  : 
+Roger  Poutine  1
+Céline  Frites  2
+Céline  Repas_Poulet 1
+   Fin

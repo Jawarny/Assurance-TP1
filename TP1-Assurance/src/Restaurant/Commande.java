@@ -1,8 +1,4 @@
-/**
- * Auteurs : Elias Jawhari et Khalil Joseph
- * Fichier : Commande.java
- * Date    : 16 février 2020
- */
+package Restaurant;
 
 public class Commande {
 

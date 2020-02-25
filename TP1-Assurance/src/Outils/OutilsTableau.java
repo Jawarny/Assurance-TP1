@@ -1,9 +1,6 @@
+package Outils;
 
-/**
- * Auteurs : Elias Jawhari et Khalil Joseph
- * Fichier : OutilsTableau.java
- * Date    : 16 février 2020
- */
+import Restaurant.*;
 
 public class OutilsTableau {
 	

@@ -1,41 +1,54 @@
 package Outils;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * Auteurs : Elias Jawhari et Khalil Joseph
  * Fichier : OutilsConstante.java
- * Date    : 16 février 2020
+ * Date    : 16 fÃ©vrier 2020
  */
 
 public class OutilsConstante {
 	
-	public static final String SAUVEGARDE = "src\\ressources\\save\\Save.txt";
+	private static DateFormat dateFormat = new SimpleDateFormat("yyyy_MM_dd-HH_mm");
+	private static Date date = new Date();
+	
+	public static final String SAUVEGARDE_DETAILLER = "src\\ressources\\save\\style_detailler.txt";
+	public static final String SAUVEGARDE_CORRIGE = "src\\ressources\\save\\style_Corriger.txt";
 	
 	public static final String MESSAGE_BIENVENU = "Bienvenue chez Barette!\n";
 	
-	public static final String ERREUR_CORRIGER = "ERREUR CORRIGER :";
-	public static final String ERREUR_FICHIER = "Le fichier ne respecte pas le format demandé !";
-	public static final String ERREUR_SECTION = "Une ou plusieurs des sections ne respecte pas le format demandé !";
+	public static final String ERREUR_AUCUNE = "Il n'y a aucune erreur dans le fichier.";
+	public static final String ERREUR_FICHIER = "Le fichier ne respecte pas le format demandÃ© :";
+	public static final String ERREUR_SECTION = "Erreur dans la section : ";
 	
-	public static final String ERREUR_CLIENT = "Erreur! Un client peut seulement avoir des lettres dans son nom!";
-	public static final String ERREUR_PLAT = "Erreur de format dans le plat numéro ";
-	public static final String ERREUR_COMMANDE = "Erreur de format dans la commande numéro ";
+	public static final String ERREUR_CLIENT = OutilsConstante.ERREUR_SECTION + " \"" + OutilsConstante.LISTE_CLIENT 
+												+  "\"\n" +"*Le nom d'un client peut seulement contenir des lettres!*";
 	
-	public static final String PATTERN_NOM_CLIENT = "[A-zÀ-ú]+";
+	public static final String ERREUR_PLAT = OutilsConstante.ERREUR_SECTION + " \"" + OutilsConstante.LISTE_PLAT 
+												+  "\"\n" + "*Il doit y avoir seulement le nem du plat et le prix "
+												+ "separer d'un espace!*";
+	
+	public static final String ERREUR_COMMANDE = OutilsConstante.ERREUR_SECTION + " \"" 
+												+ OutilsConstante.LISTE_COMMANDE 
+												+  "\"\n" + "*Il doit y avoir le nom d'un client, le nom du plat et "
+												+ "la quantitÃ© commander sÃ©parer d'espace!*";
+	
+	public static final String ERREUR_COMMANDES = "Erreur de commande :";
+	
+	public static final String PATTERN_NOM_CLIENT = "[A-zÃ€-Ãº]+";
 	public static final String PATTERN_NOM_PLAT = ".+";
 	public static final String PATTERN_PRIX_PLAT = "[0-9]+.[0-9]{1,2}";
 	public static final String PATTERN_PRIX_PLAT01 = "[0-9]+";
 	public static final String PATTERN_QUANTITE_COMMANDE = "[0-9]+";
 	
 	public static final String CHEMIN_ERREUR = "src\\ressources\\save\\erreur.txt";
-	
-	public static final String CHEMIN_SFACTURE03 = "src\\ressources\\save\\facture03.txt";
-	public static final String CHEMIN_SFACTURE02 = "src\\ressources\\save\\facture02.txt";
-	public static final String CHEMIN_SFACTURE01 = "src\\ressources\\save\\facture01.txt";
-	public static final String CHEMIN_SFACTURE = "src\\ressources\\save\\facture.txt";
-	
-	public static final String CHEMIN_FACTURE03 = "src\\ressources\\style03.txt";
-	public static final String CHEMIN_FACTURE02 = "src\\ressources\\style02.txt";
-	public static final String CHEMIN_FACTURE01 = "src\\ressources\\style01.txt";
+
+	public static final String CHEMIN_SFACTURE = "src\\ressources\\save\\Facture-du-" 
+													+ dateFormat.format(date) + ".txt";
+
 	public static final String CHEMIN_FACTURE = "src\\ressources\\style.txt";
 	
 	public static final String LISTE_CLIENT = "Clients :";

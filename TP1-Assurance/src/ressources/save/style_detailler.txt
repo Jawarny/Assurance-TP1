@@ -1,7 +1,8 @@
 Bienvenue chez Barette!
 Clients :
 Roger
-Céline
+Nesrine
+CÃ©line
 Steeve
 
 Plats :
@@ -11,10 +12,11 @@ Repas_Poulet 15.75$
 
 Commandes :
 Roger Poutine 1
-Céline Frites 2
-Céline Repas_Poulet 1
+CÃ©line Frites 2
+CÃ©line Repas_Poulet 1
 
 Facture :
 Roger 10.50$
-Céline 20.75$
+Nesrine 0.00$
+CÃ©line 20.75$
 Steeve 0.00$

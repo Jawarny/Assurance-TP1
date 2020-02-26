@@ -3,7 +3,6 @@ package Restaurant;
 import java.io.IOException;
 
 import Outils.*;
-import Restaurant.*;
 
 public class Restaurant {
 
@@ -80,6 +79,8 @@ public class Restaurant {
 
 	private void trouverCommandes() throws IOException {
 		String listeErreurs = "";
+		boolean aucuneErreur = true;
+		boolean aucuneErreurCetteCommande = true;
 		String[] clientErreur = {};
 		String[] platErreur = {};
 
@@ -95,7 +96,7 @@ public class Restaurant {
 		String[] commandeTab = OutilsTableau.extraitIndAIndB(fichierTab, indA + 1, indB - 1);
 
 		for (int i = 0; i < commandeTab.length; i++) {
-
+			aucuneErreurCetteCommande = true;
 			Client clientTemp = new Client();
 			Plat platTemp = new Plat();
 
@@ -112,8 +113,18 @@ public class Restaurant {
 			if (clientTemp.getNom().contentEquals("")) {
 				if (!OutilsTableau.valExiste(clientErreur, uneCommande[0])) {
 					clientErreur = OutilsTableau.fusionnerTableau(clientErreur, uneCommande[0]);
-					System.out.println("Erreur! " + uneCommande[0] + " n'est pas dans la liste des clients!");
-					listeErreurs += "Erreur! " + uneCommande[0] + " n'est pas dans la liste des clients!\n";
+					if ( aucuneErreur ) {
+						System.out.println( OutilsConstante.ERREUR_COMMANDES );
+						aucuneErreur = false;
+					}
+					
+					if ( aucuneErreurCetteCommande ) {
+						System.out.println( "Erreur dans la commande numéro " + (i + 1) + " :");
+						listeErreurs += "Erreur dans la commande numéro " + (i + 1) + " :\n";
+						aucuneErreurCetteCommande = false;
+					}
+					System.out.println("\"" + uneCommande[0] + "\" n'est pas dans la liste des clients!");
+					listeErreurs += "\"" + uneCommande[0] + "\" n'est pas dans la liste des clients!\n";
 				}
 			}
 
@@ -125,8 +136,19 @@ public class Restaurant {
 			if (platTemp.getNom().contentEquals("")) {
 				if (!OutilsTableau.valExiste(platErreur, uneCommande[0])) {
 					platErreur = OutilsTableau.fusionnerTableau(platErreur, uneCommande[0]);
-					System.out.println("Erreur! " + uneCommande[1] + " n'est pas dans la liste des plats!");
-					listeErreurs += "Erreur! " + uneCommande[1] + " n'est pas dans la liste des plats!";
+					if ( aucuneErreur ) {
+						System.out.println( OutilsConstante.ERREUR_COMMANDES );
+						aucuneErreur = false;
+					}
+					
+					if ( aucuneErreurCetteCommande ) {
+						System.out.println( "Erreur dans la commande numéro " + (i + 1) + " :");
+						listeErreurs += "Erreur dans la commande numéro " + (i + 1) + " :\n";
+						aucuneErreurCetteCommande = false;
+					}
+					
+					System.out.println("\"" + uneCommande[1] + "\" n'est pas dans la liste des plats!");
+					listeErreurs += "\"" + uneCommande[1] + "\" n'est pas dans la liste des plats!\n";
 				}
 
 			}
@@ -135,11 +157,14 @@ public class Restaurant {
 
 			this.commandes = OutilsTableau.fusionnerTableau(this.commandes,
 					new Commande(clientTemp, platTemp, quantite));
-
-			if (listeErreurs != "") {
-				OutilsFichier.sauvegarderFichier(OutilsConstante.CHEMIN_ERREUR, listeErreurs);
-			}
+			
+			
 		}
+		if ( !aucuneErreur ) {
+			OutilsErreur.ajouterErreur( OutilsConstante.ERREUR_COMMANDES + "\n" + listeErreurs);
+			System.out.println(  );
+		}
+		
 	}
 
 	private void trouverFacture() {
@@ -200,18 +225,30 @@ public class Restaurant {
 	public void afficherFacture(String chemin) throws IOException {
 
 		String facture = OutilsConstante.MESSAGE_BIENVENU;
+		String fichier = OutilsConstante.MESSAGE_BIENVENU;
 		facture += OutilsConstante.LISTE_FACTURE + "\n";
+		fichier += OutilsConstante.LISTE_FACTURE + "\n";
 		for (int i = 0; i < getClient().length; i++) {
+			
 			if (i == getClient().length - 1) {
 				facture += getClient()[i].getNom() + " " + String.format("%.2f", getClient()[i].getFacture().getTotal())
 						+ "$";
+				if ( getClient()[i].getFacture().getTotal() != 0 ) {
+					fichier += getClient()[i].getNom() + " " 
+							+ String.format("%.2f", getClient()[i].getFacture().getTotal()) + "$";
+				}
 			} else {
 				facture += getClient()[i].getNom() + " " + String.format("%.2f", getClient()[i].getFacture().getTotal())
 						+ "$\n";
+				
+				if ( getClient()[i].getFacture().getTotal() != 0 ) {
+					fichier += getClient()[i].getNom() + " " 
+							+ String.format("%.2f", getClient()[i].getFacture().getTotal()) + "$\n";
+				}
 			}
 		}
 		System.out.println(facture + "\n");
-		OutilsFichier.sauvegarderFichier(chemin, facture);
+		OutilsFichier.sauvegarderFichier(chemin, fichier);
 	}
 
 	public void afficherClientsDetailler() {

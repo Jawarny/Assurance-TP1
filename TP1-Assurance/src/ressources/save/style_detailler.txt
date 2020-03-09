@@ -15,6 +15,6 @@ Céline Frites 2
 Céline Repas_Poulet 1
 
 Facture :
-Roger 10.50$
-Céline 20.75$
+Roger 12.07$
+Céline 23.86$
 Steeve 0.00$

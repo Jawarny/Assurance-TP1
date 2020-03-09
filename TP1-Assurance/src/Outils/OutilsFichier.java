@@ -39,7 +39,6 @@ public class OutilsFichier {
 																	+ " ligne vide dans le fichier qui ont ete "
 																	+ "retirer!\n\n");
 			}
-			
 		}
 		return chaqueLigne;
 	}

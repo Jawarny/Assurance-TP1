@@ -11,9 +11,7 @@ public class Restaurant {
 	private Plat[] plats = {};
 	private Commande[] commandes = {};
 
-	public Restaurant() {
 
-	}
 
 	public Restaurant(String fichier) throws IOException {
 
@@ -225,30 +223,38 @@ public class Restaurant {
 	public void afficherFacture(String chemin) throws IOException {
 
 		String facture = OutilsConstante.MESSAGE_BIENVENU;
+		String fichierAvTaxe = OutilsConstante.MESSAGE_BIENVENU;
 		String fichier = OutilsConstante.MESSAGE_BIENVENU;
 		facture += OutilsConstante.LISTE_FACTURE + "\n";
+		fichierAvTaxe += OutilsConstante.LISTE_FACTURE + "\n";
 		fichier += OutilsConstante.LISTE_FACTURE + "\n";
 		for (int i = 0; i < getClient().length; i++) {
 			
 			if (i == getClient().length - 1) {
-				facture += getClient()[i].getNom() + " " + String.format("%.2f", getClient()[i].getFacture().getTotal())
-						+ "$";
-				if ( getClient()[i].getFacture().getTotal() != 0 ) {
-					fichier += getClient()[i].getNom() + " " 
-							+ String.format("%.2f", getClient()[i].getFacture().getTotal()) + "$";
-				}
-			} else {
-				facture += getClient()[i].getNom() + " " + String.format("%.2f", getClient()[i].getFacture().getTotal())
-						+ "$\n";
+				facture += getClient()[i].getNom() + " " 
+						+ String.format("%.2f", getClient()[i].getFacture().getGrandTotal()) + "$";
 				
 				if ( getClient()[i].getFacture().getTotal() != 0 ) {
 					fichier += getClient()[i].getNom() + " " 
-							+ String.format("%.2f", getClient()[i].getFacture().getTotal()) + "$\n";
+							+ String.format("%.2f", getClient()[i].getFacture().getGrandTotal()) + "$";
+					fichierAvTaxe += getClient()[i].getNom() + " " 
+							+ String.format("%.2f", getClient()[i].getFacture().getTotal()) + "$";
+				}
+			} else {
+				facture += getClient()[i].getNom() + " " 
+							+ String.format("%.2f", getClient()[i].getFacture().getGrandTotal()) + "$\n";
+				
+				if ( getClient()[i].getFacture().getTotal() != 0 ) {
+					fichier += getClient()[i].getNom() + " " 
+							+ String.format("%.2f", getClient()[i].getFacture().getGrandTotal()) + "$\n";
+					fichierAvTaxe += getClient()[i].getNom() + " " 
+							+ String.format("%.2f", getClient()[i].getFacture().getGrandTotal()) + "$\n";
 				}
 			}
 		}
 		System.out.println(facture + "\n");
-		OutilsFichier.sauvegarderFichier(chemin, fichier);
+		OutilsFichier.sauvegarderFichier(chemin + ".txt", fichier);
+		OutilsFichier.sauvegarderFichier(chemin + "_AvantTaxe.txt", fichierAvTaxe);
 	}
 
 	public void afficherClientsDetailler() {
@@ -319,10 +325,10 @@ public class Restaurant {
 		for (int i = 0; i < getClient().length; i++) {
 			if (i == getClient().length - 1) {
 				fichierDetailler += getClient()[i].getNom() + " "
-						+ String.format("%.2f", getClient()[i].getFacture().getTotal()) + "$";
+						+ String.format("%.2f", getClient()[i].getFacture().getGrandTotal()) + "$";
 			} else {
 				fichierDetailler += getClient()[i].getNom() + " "
-						+ String.format("%.2f", getClient()[i].getFacture().getTotal()) + "$\n";
+						+ String.format("%.2f", getClient()[i].getFacture().getGrandTotal()) + "$\n";
 			}
 		}
 		OutilsFichier.sauvegarderFichier(chemin, fichierDetailler);

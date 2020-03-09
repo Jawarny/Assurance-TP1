@@ -47,7 +47,10 @@ public class OutilsConstante {
 	public static final String CHEMIN_ERREUR = "src\\ressources\\save\\erreur.txt";
 
 	public static final String CHEMIN_SFACTURE = "src\\ressources\\save\\Facture-du-" 
-													+ dateFormat.format(date) + ".txt";
+													+ dateFormat.format(date);
+	
+	public static final String CHEMIN_STEST = "src\\ressources\\save\\Facture-du-" 
+													+ dateFormat.format(date);
 
 	public static final String CHEMIN_FACTURE = "src\\ressources\\style.txt";
 	

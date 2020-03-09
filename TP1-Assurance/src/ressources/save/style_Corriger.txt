@@ -1,12 +1,11 @@
 Clients :
 Roger
-Nesrine
 Céline
 Steeve
 Plats :
 Poutine 10.5
 Frites 2.5
-Repas_Pou let 15.75
+Repas_Poulet 15.75
 Commandes :
 Roger Poutine 1
 Céline Frites 2

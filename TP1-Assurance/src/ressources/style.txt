@@ -1,15 +1,13 @@
-Clients   :  
- Roger
-   Nesrine
-Céline  
+Clients :
+Roger
+Céline
 Steeve
 Plats :
-Poutine 10.5 
-
+Poutine 10.5
 Frites 2.5
-Repas_Pou let 15.75
-Commandes :  
-Roger  Poutine   1
+Repas_Poulet 15.75
+Fin
+Commandes :
+Roger Poutine 1
 Céline Frites 2
 Céline Repas_Poulet 1
-Fin

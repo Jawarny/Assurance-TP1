@@ -64,22 +64,45 @@ public class OutilsFormattage {
 		
 		String messageErreur = OutilsConstante.ERREUR_FICHIER + "\n";
 		
+		
+		
 		if ( !(fichier.contains(OutilsConstante.LISTE_CLIENT) && fichier.contains(OutilsConstante.LISTE_PLAT) 
-				&& fichier.contains(OutilsConstante.LISTE_COMMANDE) && fichier.endsWith(OutilsConstante.LISTE_FIN)) ) {
+				&& fichier.contains(OutilsConstante.LISTE_COMMANDE) && fichier.contains(OutilsConstante.LISTE_FIN)) ) {
+			
+			
 			messageErreur += "Il manque la/les ligne(s) suivante(s) :\n";
 			
-			if ( !fichier.contains(OutilsConstante.LISTE_CLIENT) ) {
-				messageErreur +=  "\"" +OutilsConstante.LISTE_CLIENT + "\"" + "\n";
+			if ( !fichier.contains( OutilsConstante.LISTE_CLIENT ) ) {
+				messageErreur +=  "\"" + OutilsConstante.LISTE_CLIENT + "\"" + "\n";
+			} else if ( OutilsTableau.nbValExiste(fichier.split("\n"), OutilsConstante.LISTE_CLIENT ) > 1 ) {
+				
 			}
+			
 			if ( !fichier.contains(OutilsConstante.LISTE_PLAT) ) {
 				messageErreur +=  "\"" + OutilsConstante.LISTE_PLAT + "\"" + "\n";
+			} else if ( OutilsTableau.nbValExiste(fichier.split("\n"), OutilsConstante.LISTE_PLAT ) > 1 ) {
+				
 			}
+			
 			if ( !fichier.contains(OutilsConstante.LISTE_COMMANDE) ) {
 				messageErreur +=  "\"" + OutilsConstante.LISTE_COMMANDE + "\"" + "\n";
+			} else if ( OutilsTableau.nbValExiste(fichier.split("\n"), OutilsConstante.LISTE_COMMANDE ) > 1 ) {
+				
 			}
 			if ( !fichier.contains(OutilsConstante.LISTE_FIN) ) {
 				messageErreur +=  "\"" + OutilsConstante.LISTE_FIN + "\"" + "\n";
+				
+			} else if ( OutilsTableau.nbValExiste(fichier.split("\n"), OutilsConstante.LISTE_FIN ) > 1 ) {
+				
 			}
+			System.out.println( messageErreur + "\n" );
+			OutilsErreur.ajouterErreur( messageErreur + "\n" );
+		}
+		
+		if ( fichier.contains(OutilsConstante.LISTE_FIN) && !fichier.endsWith(OutilsConstante.LISTE_FIN) ) {
+			messageErreur =  "\""  + OutilsConstante.LISTE_FIN + "\" n'est pas manquant, mais doit être à la "
+					+ "fin!\n";
+			
 			System.out.println( messageErreur + "\n" );
 			OutilsErreur.ajouterErreur( messageErreur + "\n" );
 		}

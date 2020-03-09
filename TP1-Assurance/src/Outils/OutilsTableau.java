@@ -102,6 +102,16 @@ public class OutilsTableau {
 		return existe;
 	}
 	
+	public static int nbValExiste( String[] tabVal, String val ) {
+
+		int existe = 0;
+
+		for ( int i = 0; i < tabVal.length; i++ ) {
+			existe ++;
+		}
+		return existe;
+	}
+	
 	public static int indiceVal( String[] tabVal, String val ) {
 
 		int indice = -1;

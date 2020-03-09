@@ -1,7 +1,6 @@
 Bienvenue chez Barette!
 Clients :
 Roger
-Nesrine
 Céline
 Steeve
 
@@ -17,6 +16,5 @@ Céline Repas_Poulet 1
 
 Facture :
 Roger 10.50$
-Nesrine 0.00$
 Céline 20.75$
 Steeve 0.00$

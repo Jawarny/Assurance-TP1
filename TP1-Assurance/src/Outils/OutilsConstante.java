@@ -28,7 +28,7 @@ public class OutilsConstante {
 												+  "\"\n" +"*Le nom d'un client peut seulement contenir des lettres!*";
 	
 	public static final String ERREUR_PLAT = OutilsConstante.ERREUR_SECTION + " \"" + OutilsConstante.LISTE_PLAT 
-												+  "\"\n" + "*Il doit y avoir seulement le nem du plat et le prix "
+												+  "\"\n" + "*Il doit y avoir seulement le nom du plat et le prix "
 												+ "separer d'un espace!*";
 	
 	public static final String ERREUR_COMMANDE = OutilsConstante.ERREUR_SECTION + " \"" 

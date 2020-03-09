@@ -248,7 +248,7 @@ public class Restaurant {
 					fichier += getClient()[i].getNom() + " " 
 							+ String.format("%.2f", getClient()[i].getFacture().getGrandTotal()) + "$\n";
 					fichierAvTaxe += getClient()[i].getNom() + " " 
-							+ String.format("%.2f", getClient()[i].getFacture().getGrandTotal()) + "$\n";
+							+ String.format("%.2f", getClient()[i].getFacture().getTotal()) + "$\n";
 				}
 			}
 		}

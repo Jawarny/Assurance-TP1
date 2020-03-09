@@ -1,2 +1,14 @@
+Il n'y a aucune erreur dans le fichier.
+Il y avait 1 ligne vide dans le fichier qui ont ete retirer!
+
+Le fichier ne respecte pas le format demandÃ© :
+Il manque la/les ligne(s) suivante(s) :
+"Commandes :"
+
+Il y a un ou plusieurs doublons dans la/les ligne(s) suivante(s) :
+"Clients :" apparait 2 fois!
+"Plats :" apparait 2 fois!
+"Fin" apparait 2 fois!
+
 "Fin" n'est pas manquant, mais doit être à la fin!
 

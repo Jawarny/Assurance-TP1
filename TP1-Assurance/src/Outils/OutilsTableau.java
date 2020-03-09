@@ -107,7 +107,10 @@ public class OutilsTableau {
 		int existe = 0;
 
 		for ( int i = 0; i < tabVal.length; i++ ) {
-			existe ++;
+			if (tabVal[i].contentEquals(val)) {
+				existe ++;
+			}
+			
 		}
 		return existe;
 	}
